@@ -2,17 +2,18 @@ import styled from "styled-components";
 import ImgBackground from '../../images/hero-background.jpeg'
 
 export const HeroContainer = styled.div`
-background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url(${ImgBackground});
-height: 100vh;
-background-position: center;
-background-size: cover;
+    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url(${ImgBackground});
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
 `;
 
 export const HeroContent = styled.div`
     height: calc(100vh -80px);
     max-height: 100%;
-    width: 100vw;
-    padding: 0rem calc((100vw - 1300px) /2);
+    width: 100%;
+    padding: 0rem calc((100vw - 1300px) /2); 
 `;
 
 export const HeroItems = styled.div`

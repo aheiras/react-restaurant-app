@@ -1,21 +1,16 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
-import { PiShoppingCartSimpleBold } from "react-icons/pi";
+import { GrRestaurant } from 'react-icons/gr'
 
 export const Nav = styled.nav`
     background: transparent;
     display: flex;
     justify-content: center;
     font-weight: 700;
-    margin-bottom: 30px;
-
-    @media screen and (max-width: 400px) {
-        margin-bottom: 60px;
-    }
 `;
 
 export const NavLink = styled(Link)`
-    color: #000;
+    color: #fff;
     font-size: 2rem;
     display: flex;
     align-items: center;
@@ -35,7 +30,7 @@ export const NavIcon = styled.div`
     top: 0;
     right: 0;
     cursor: pointer;
-    color: #000;
+    color: #fff;
 
     p {
         transform: translate(-175%, 100%);
@@ -43,7 +38,7 @@ export const NavIcon = styled.div`
     }
 `;
 
-export const Cart = styled(PiShoppingCartSimpleBold)`
+export const Bars = styled(GrRestaurant)`
     font-size: 2rem;
     transform: translate(-50%, -15%);
 `;

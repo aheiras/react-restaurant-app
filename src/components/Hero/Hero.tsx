@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar'
+import HeroNavbar from '../HeroNavbar/HeroNavbar'
 import { HeroContainer, HeroContent, HeroItems, HeroH1, HeroP, HeroBtn } from './HeroElements'
 import Sidebar from '../Sidebar/Sidebar'
 
@@ -20,7 +20,7 @@ const Hero: FC = () => {
 
     return (
         <HeroContainer>
-            <Navbar toggle={toggle}/>
+            <HeroNavbar toggle={toggle}/>
             <Sidebar isOpen={isOpen} toggle={toggle}/>
             <HeroContent>
                 <HeroItems>

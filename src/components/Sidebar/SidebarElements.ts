@@ -11,7 +11,7 @@ export const SidebarContainer = styled.aside<SidebarContainerProps>`
     z-index: 999;
     width: 350px;
     height: 100%;
-    background: #6AA73A;
+    background: #ffefba;
     display: grid;
     align-items: center;
     top: 0;
@@ -30,7 +30,7 @@ export const SidebarContainer = styled.aside<SidebarContainerProps>`
 `;
 
 export const CloseIcon =  styled(FaTimes)`
-    color: #fff;
+    color: #000;
 `;
 
 export const Icon = styled.div`
@@ -63,7 +63,7 @@ export const SidebarLink = styled(Link)`
     text-decoration: none;
     list-style: none;
     transition: 0.2s ease-in-out;
-    color: #fff;
+    color: #000;
     cursor: pointer;
     font-weight: bold;
 
@@ -92,7 +92,7 @@ export const SidebarRoute = styled(Link)`
 
     &:hover {
         transition: 0.2s ease-in-out;
-        background: #fff;
-        color: #010606;
+        background: #6AA73A;
+        color: #fff;
     }
 `;

@@ -5,8 +5,7 @@ interface SidebarProps {
     isOpen: boolean;
     toggle: () => void;
   }
-
-
+  
 const Sidebar: FC<SidebarProps> = ({isOpen, toggle}) => {
     return (
         <SidebarContainer isOpen={isOpen} onClick={toggle}>
@@ -21,7 +20,7 @@ const Sidebar: FC<SidebarProps> = ({isOpen, toggle}) => {
                 <SidebarLink to="/">Beverages</SidebarLink>
             </SidebarMenu>
             <SidebarBtnWrap>
-                <SidebarRoute to="/">See Full Menu</SidebarRoute>
+                <SidebarRoute to="/menu/categories">See Full Menu</SidebarRoute>
             </SidebarBtnWrap>
         </SidebarContainer>
     )

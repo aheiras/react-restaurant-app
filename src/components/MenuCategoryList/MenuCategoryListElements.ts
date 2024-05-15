@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
 export const CategoryListContainer = styled.div`
-/* Add your styling for the category list container */
+  display: flex;
+  flex-direction: column; /* Set to column to stack tiles vertically */
+  align-items: center; /* Center the tiles horizontally */
+  gap: 20px; /* Add spacing between tiles */
 `;

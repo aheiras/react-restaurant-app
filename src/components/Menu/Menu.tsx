@@ -1,13 +1,19 @@
 import {FC} from 'react';
 import MenuCategoryList from '../MenuCategoryList/MenuCategoryList';
+import { MenuContainer } from './MenuElements';
+import { GlobalStyle } from '../../globalStyles';
+import Navbar from '../Navbar/Navbar';
 
 const Menu:FC = () => {
 
     return (
-        <div>
-          <h1>Menu</h1>
-          <MenuCategoryList/>
-        </div>
+        <>
+            <GlobalStyle/>
+            <MenuContainer>
+                <Navbar/>
+                <MenuCategoryList/>
+            </MenuContainer>
+        </>
       );
     };
 

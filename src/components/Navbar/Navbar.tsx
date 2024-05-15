@@ -1,19 +1,15 @@
 import { FC } from 'react'
-import {Bars, Nav, NavIcon, NavLink} from './NavbarElements'
+import { Cart, Nav, NavIcon, NavLink } from './NavbarElements';
 
-interface NavbarProps {
-    toggle: () => void;
-  }
-
-const Navbar: FC<NavbarProps> = ({toggle}) => {
+const Navbar: FC = () => {
     
     return (
         <>
             <Nav>
                 <NavLink to='/'>Tasty Bytes</NavLink>
-                <NavIcon onClick={toggle}>
+                <NavIcon>
                     <p>Menu</p>
-                    <Bars />
+                    <Cart />
                 </NavIcon>
             </Nav>
         </>
