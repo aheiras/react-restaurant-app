@@ -39,6 +39,21 @@ const fetchFeaturedItems = (): Promise<MenuItem[]> => {
       }, 1000);
     });
   };
+
+  const simulatePayment = (): Promise<void> => {
+    return new Promise<void>((resolve, reject) => {
+      setTimeout(() => {
+        // Simulate payment success or failure randomly
+        const isSuccess = Math.random() < 0.8; // 80% success rate
+        console.log(isSuccess);
+        if (isSuccess) {
+          resolve();
+        } else {
+          reject(new Error('Payment failed'));
+        }
+      }, 2000); // Simulate 2 seconds delay
+    });
+  };
   
   // Export the functions
-  export { fetchCategories, fetchAllItems, fetchItemsByCategoryId, fetchFeaturedItems };
+  export { fetchCategories, fetchAllItems, fetchItemsByCategoryId, fetchFeaturedItems, simulatePayment };

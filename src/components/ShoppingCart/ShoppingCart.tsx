@@ -1,9 +1,17 @@
 import { FC } from 'react';
 import { useMenuContext } from '../../context/MenuContext';
-import { CartContainer, CartItem, CartItemName, CartItemPrice, RemoveButton, ClearButton } from './ShoppingCartElements';
+import { useNavigate } from 'react-router-dom';
+import { CartContainer, CartItem, CartItemName, CartItemPrice, RemoveButton, ClearButton, CheckoutButton } from './ShoppingCartElements';
 
 const ShoppingCart: FC = () => {
   const { cartItems, removeFromCart, clearCart } = useMenuContext();
+
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    // Navigate to the MenuCategoryList component
+    navigate('/checkout');
+}
 
   return (
     <CartContainer>
@@ -20,6 +28,7 @@ const ShoppingCart: FC = () => {
             </CartItem>
           ))}
           <ClearButton onClick={clearCart}>Clear Cart</ClearButton>
+          <CheckoutButton onClick={handleCheckout}>Checkout</CheckoutButton>
         </>
       )}
     </CartContainer>

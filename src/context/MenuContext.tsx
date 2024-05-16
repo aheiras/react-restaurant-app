@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, FC, ReactNode } from 'react';
 import { MenuItem, MenuCategory } from '../models/menu';
 import { initialMenuItems, initialMenuCategories } from '../mocks/menuData';
+import { toast } from 'react-toastify';
 
 interface CartItem extends MenuItem {
     quantity: number;
@@ -40,6 +41,7 @@ export const MenuProvider:FC<MenuProviderProps> = ({ children }) => {
   const addToCart = (item: MenuItem) => {
     setCartItems(prevItems => {
       const existingItem = prevItems.find(cartItem => cartItem.id === item.id);
+      toast.success(`${item.name} added to cart!`);
       if (existingItem) {
         return prevItems.map(cartItem =>
           cartItem.id === item.id
@@ -60,8 +62,8 @@ export const MenuProvider:FC<MenuProviderProps> = ({ children }) => {
   };
 
   const createOrderFromCart = () => {
-    // For simplicity, just log the cart items for now
-    console.log('Creating order from cart:', cartItems);
+    toast.success('Order placed successfully.');    
+    clearCart();
   };
 
   return (

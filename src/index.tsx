@@ -7,6 +7,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './error-page';
 import Menu from './components/Menu/Menu';
 import { MenuProvider } from './context/MenuContext';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Checkout from './components/Checkout/Checkout';
 
 const router = createBrowserRouter([
     {
@@ -23,7 +26,12 @@ const router = createBrowserRouter([
         path: "/menu/:categoryId/:categoryName",
         element: <Menu />,
         errorElement: <ErrorPage />,
-      },      
+      },
+      {
+        path: "/checkout",
+        element: <Checkout/>,
+        errorElement: <ErrorPage />,
+      },   
   ]);
 
 const root = ReactDOM.createRoot(
@@ -34,6 +42,7 @@ root.render(
     <MenuProvider>
         <RouterProvider router={router} />
     </MenuProvider>
+    <ToastContainer />
   </React.StrictMode>
 );
 

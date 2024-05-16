@@ -43,3 +43,14 @@ export const ClearButton = styled.button`
   border-radius: 5px;
   margin-top: 10px;
 `;
+
+export const CheckoutButton = styled.button`
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: 20px;
+`;
