@@ -39,11 +39,23 @@ export const NavLink = styled(Link)`
     }
 `;
 
+export const NavIcon = styled.div`
+  display: flex;
+  right: 10px;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+
+  p {
+    margin-left: 5px;
+    transform: translate(-100%, 40%);
+    font-weight: bold;
+    color: red;
+  }
+`;
+
 export const CartIcon = styled(PiShoppingCartSimpleBold)`
     font-size: 2rem;
-    position: absolute;
-    right: 10px;
     transform: translate(-50%, 30%);
-    cursor: pointer;
     color: #000;
 `;

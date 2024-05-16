@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './error-page';
 import Menu from './components/Menu/Menu';
+import { MenuProvider } from './context/MenuContext';
 
 const router = createBrowserRouter([
     {
@@ -30,7 +31,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <MenuProvider>
+        <RouterProvider router={router} />
+    </MenuProvider>
   </React.StrictMode>
 );
 

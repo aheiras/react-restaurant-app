@@ -7,8 +7,6 @@ interface MenuCategoryProps {
   category: MenuCategoryType;
 }
 
-
-
 const MenuCategory: React.FC<MenuCategoryProps> = ({ category }) => {
     const navigate = useNavigate();
 
