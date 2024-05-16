@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
+import { FaArrowLeft } from 'react-icons/fa';
 
 export const Nav = styled.nav`
     background: transparent;
@@ -12,6 +13,15 @@ export const Nav = styled.nav`
     @media screen and (max-width: 400px) {
         margin-bottom: 60px;
     }
+`;
+
+export const GoBackIcon = styled(FaArrowLeft)`
+  font-size: 2rem;
+  position: absolute;
+  left: 10px;
+  transform: translate(50%, 30%);
+  cursor: pointer;
+  color: #000;
 `;
 
 export const NavLink = styled(Link)`
@@ -29,21 +39,11 @@ export const NavLink = styled(Link)`
     }
 `;
 
-export const NavIcon = styled.div`
-    display: block;
+export const CartIcon = styled(PiShoppingCartSimpleBold)`
+    font-size: 2rem;
     position: absolute;
-    top: 0;
-    right: 0;
+    right: 10px;
+    transform: translate(-50%, 30%);
     cursor: pointer;
     color: #000;
-
-    p {
-        transform: translate(-175%, 100%);
-        font-weight: bold;
-    }
-`;
-
-export const Cart = styled(PiShoppingCartSimpleBold)`
-    font-size: 2rem;
-    transform: translate(-50%, -15%);
 `;

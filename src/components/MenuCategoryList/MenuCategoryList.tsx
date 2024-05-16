@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { MenuCategory as MenuCategoryType} from '../../models/menu';
 import MenuCategory from '../MenuCategory/MenuCategory';
 import { CategoryListContainer } from './MenuCategoryListElements';
-import fetchCategories from '../../services/api';
+import { fetchCategories } from '../../services/api';
 import Spinner from '../Spinner/Spinner';
 
 

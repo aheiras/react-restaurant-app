@@ -1,16 +1,20 @@
 import { FC } from 'react'
-import { Cart, Nav, NavIcon, NavLink } from './NavbarElements';
+import { useNavigate } from 'react-router-dom';
+import { GoBackIcon, CartIcon, Nav, NavLink } from './NavbarElements';
 
 const Navbar: FC = () => {
-    
+    const navigate = useNavigate();
+
+    const handleGoBack = () => {
+      navigate(-1); //
+    };
+
     return (
         <>
             <Nav>
+                <GoBackIcon onClick={handleGoBack} />
                 <NavLink to='/'>Tasty Bytes</NavLink>
-                <NavIcon>
-                    <p>Menu</p>
-                    <Cart />
-                </NavIcon>
+                <CartIcon />
             </Nav>
         </>
     )
