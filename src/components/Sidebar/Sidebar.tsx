@@ -13,11 +13,11 @@ const Sidebar: FC<SidebarProps> = ({isOpen, toggle}) => {
                 <CloseIcon/>
             </Icon>
             <SidebarMenu>
-                <SidebarLink to="/">Appetizers</SidebarLink>
-                <SidebarLink to="/">Entrees</SidebarLink>
-                <SidebarLink to="/">Sides</SidebarLink>
-                <SidebarLink to="/">Desserts</SidebarLink>
-                <SidebarLink to="/">Beverages</SidebarLink>
+                <SidebarLink to="/menu/1/Appetizers">Appetizers</SidebarLink>
+                <SidebarLink to="/menu/2/Entrees">Entrees</SidebarLink>
+                <SidebarLink to="/menu/3/Sides">Sides</SidebarLink>
+                <SidebarLink to="/menu/4/Desserts">Desserts</SidebarLink>
+                <SidebarLink to="/menu/5/Beverages">Beverages</SidebarLink>
             </SidebarMenu>
             <SidebarBtnWrap>
                 <SidebarRoute to="/menu/categories">See Full Menu</SidebarRoute>

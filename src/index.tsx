@@ -18,6 +18,11 @@ const router = createBrowserRouter([
         element: <Menu />,
         errorElement: <ErrorPage />,
       },
+      {
+        path: "/menu/:categoryId/:categoryName",
+        element: <Menu />,
+        errorElement: <ErrorPage />,
+      },      
   ]);
 
 const root = ReactDOM.createRoot(

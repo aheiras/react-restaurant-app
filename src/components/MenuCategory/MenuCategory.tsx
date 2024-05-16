@@ -1,6 +1,7 @@
 import React from 'react';
 import {CategoryContainer} from './MenuCategoryElements'
 import { MenuCategory as MenuCategoryType} from '../../models/menu';
+import { useNavigate } from 'react-router-dom';
 
 interface MenuCategoryProps {
   category: MenuCategoryType;
@@ -9,11 +10,15 @@ interface MenuCategoryProps {
 
 
 const MenuCategory: React.FC<MenuCategoryProps> = ({ category }) => {
+    const navigate = useNavigate();
+
+  const handleCategoryClick = () => {
+    navigate(`/menu/${category.id}/${category.name}`);
+  };
+  
   return (
-    <CategoryContainer imageUrl={category.image}>
-      {/* Display category information */}
+    <CategoryContainer imageUrl={category.image} onClick={handleCategoryClick}>
       <h2>{category.name}</h2>
-      {/* You can add more information like category image if needed */}
     </CategoryContainer>
   );
 };

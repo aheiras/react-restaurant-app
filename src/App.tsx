@@ -6,6 +6,7 @@ import MenuItemList from './components/MenuItemList/MenuItemList';
 import { MenuItem as MenuItemType } from './models/menu';
 import { fetchFeaturedItems } from './services/api';
 import Spinner from './components/Spinner/Spinner';
+import Footer from './components/Footer/Footer';
 
 
 const App: FC = () => {
@@ -28,6 +29,7 @@ const App: FC = () => {
         <GlobalStyle/>
         <Hero/>
         <MenuItemList heading='Check our featured products' items={items} />
+        <Footer />
     </>
   );
 }
