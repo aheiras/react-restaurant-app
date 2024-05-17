@@ -1,14 +1,13 @@
-import { FC } from 'react'
-import { Container, Loader } from './SpinnerElements';
+import { FC } from 'react';
+import { Container, Loader, OuterCircle } from './SpinnerElements';
 
-
-const Spinner:FC = () => {
-
-    return (
-        <Container>
-             <Loader />
-        </Container>
-      );
-    };
+const Spinner: FC = () => {
+  return (
+    <Container>
+      <OuterCircle />
+      <Loader />
+    </Container>
+  );
+};
 
 export default Spinner;

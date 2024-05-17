@@ -1,66 +1,133 @@
 import styled from "styled-components";
-import { Link } from 'react-router-dom'
-import { GrRestaurant } from 'react-icons/gr'
-import { PiShoppingCartSimpleBold } from "react-icons/pi";
+import { Link } from 'react-router-dom';
+import { GrRestaurant } from 'react-icons/gr';
+import { PiShoppingCartSimpleBold } from 'react-icons/pi';
+import { FaArrowLeft } from 'react-icons/fa';
 
-export const Nav = styled.nav`
-    background: transparent;
-    display: flex;
-    justify-content: center;
-    font-weight: 700;
-    position: relative; /* Ensure positioned children are relative to this */
+interface ShowGoBackIconProps {
+    showGoBackIcon: boolean;
+}
+
+interface HideCartIconProps {
+    hideShoppingCartIcon: boolean;
+}
+
+export const Nav = styled.nav<ShowGoBackIconProps>`
+  background: ${(props) => (props.showGoBackIcon ? 'linear-gradient(to right, #ffefba, #ffffff)' : '#0d0909' )};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+  }
 `;
 
-export const NavLink = styled(Link)`
-    color: #fff;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer;
+export const NavLink = styled(Link)<ShowGoBackIconProps>`
+color: ${(props) => (props.showGoBackIcon ? '#000' : '#fff')};
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
 
-    @media screen and (max-width: 400px) {
-        position: absolute;
-        top: 10px;
-        left: 25px;
-    }
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
-export const NavIcon = styled.div`
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 10px; /* Adjusted to make space for NavCart */
-    cursor: pointer;
-    color: #fff;
+export const NavCart = styled.div<HideCartIconProps>`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 1.5rem;
+  visibility: ${(props) => (props.hideShoppingCartIcon ? 'hidden' : 'visible')};
 
-    p {
-        transform: translate(-175%, 100%);
-        font-weight: bold;
+  p {
+    margin-left: 0.5rem;
+    font-weight: bold;
+    color: red;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      margin-left: 0.3rem;
     }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
+  }
+`;
+
+export const CartIcon = styled(PiShoppingCartSimpleBold)<ShowGoBackIconProps>`
+  color: ${(props) => (props.showGoBackIcon ? '#000' : '#fff')};
+  font-size: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
+`;
+
+export const NavIcon = styled.div<ShowGoBackIconProps>`
+  color: ${(props) => (props.showGoBackIcon ? '#000' : '#fff')};
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  p {
+    margin-left: 0.5rem;
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      margin-left: 0.3rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 export const Bars = styled(GrRestaurant)`
-    font-size: 2rem;
-    transform: translate(-50%, -15%);
+  font-size: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
-export const NavCart = styled.div`
-    display: block;
-    position: absolute;
-    top: 10px;
-    right: 140px; /* Positioned to the left of NavIcon */
-    cursor: pointer;
-    color: #fff;
+export const GoBackIcon = styled(FaArrowLeft)`
+  font-size: 2rem;
 
-    p {
-        transform: translate(70%, -120%);
-        font-weight: bold;
-        color: red;
-    }
-`;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 
-export const CartIcon = styled(PiShoppingCartSimpleBold)`
-    font-size: 2rem;
-    transform: translate(-50%, 15%);
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;

@@ -8,7 +8,7 @@ interface SidebarContainerProps {
 
 export const SidebarContainer = styled.aside<SidebarContainerProps>`
     position: fixed;
-    z-index: 999;
+    z-index: 1000;
     width: 350px;
     height: 100%;
     background: #ffefba;
@@ -16,17 +16,11 @@ export const SidebarContainer = styled.aside<SidebarContainerProps>`
     align-items: center;
     top: 0;
     transition: 0.3s ease-in-out;
-    right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
+    left: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
 
     @media screen and (max-width: 400px) {
         width: 100%;
     }
-
-     ${({ isOpen }) => isOpen ? `
-        right: 0;
-    ` : `
-        right: -1000px;
-    `}
 `;
 
 export const CloseIcon =  styled(FaTimes)`

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, FC, ReactNode } from 'react';
+import { createContext, useContext, useState, FC, ReactNode, useEffect } from 'react';
 import { MenuItem, MenuCategory } from '../models/menu';
 import { initialMenuItems, initialMenuCategories } from '../mocks/menuData';
 import { toast } from 'react-toastify';
@@ -35,8 +35,15 @@ interface MenuProviderProps {
 
 export const MenuProvider:FC<MenuProviderProps> = ({ children }) => {
   const [menuItems, setMenuItems] = useState<MenuItem[]>(initialMenuItems);
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    const savedCartItems = localStorage.getItem('cartItems');
+    return savedCartItems ? JSON.parse(savedCartItems) : [];
+  });
   const [menuCategories, setMenuCategories] = useState<MenuCategory[]>(initialMenuCategories);
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (item: MenuItem) => {
     setCartItems(prevItems => {

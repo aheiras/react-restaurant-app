@@ -45,7 +45,6 @@ const fetchFeaturedItems = (): Promise<MenuItem[]> => {
       setTimeout(() => {
         // Simulate payment success or failure randomly
         const isSuccess = Math.random() < 0.8; // 80% success rate
-        console.log(isSuccess);
         if (isSuccess) {
           resolve();
         } else {
